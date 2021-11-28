@@ -1,5 +1,6 @@
 package peertopeer;
 public class FrameComunicazione extends javax.swing.JFrame {
+    DatiCondivisi Cond= new DatiCondivisi();
     public FrameComunicazione() {
         initComponents();
     }
@@ -27,6 +28,11 @@ public class FrameComunicazione extends javax.swing.JFrame {
         jLabel1.setText("Apri connessione ->");
 
         BtnConnetti.setText("Connetti!");
+        BtnConnetti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnConnettiActionPerformed(evt);
+            }
+        });
 
         TxtIP.setText("IP");
 
@@ -95,8 +101,14 @@ public class FrameComunicazione extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnChiudiConnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnChiudiConnActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_BtnChiudiConnActionPerformed
+
+    private void BtnConnettiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConnettiActionPerformed
+        String Ip=TxtIP.getText();
+        String Username=TxtMex.getText();
+        Cond.Set(Ip, Username);
+    }//GEN-LAST:event_BtnConnettiActionPerformed
 
     /**
      * @param args the command line arguments
