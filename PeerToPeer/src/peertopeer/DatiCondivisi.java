@@ -1,12 +1,10 @@
 package peertopeer;
 
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
 
 public class DatiCondivisi {
 
     String IP,Username="";
+    char Stato='C';
     public void Set(String ip,String Usern){
         IP=ip;
         Username=Usern;
@@ -18,7 +16,13 @@ public class DatiCondivisi {
     public String getUsername() {
         return Username;
     }
-     String risposta = "CIAO CLIENT";
 
+    public void setStato(char Stato) {
+        this.Stato = Stato;
+    }
+    
+    public char getStato() {
+        return Stato;
+    }
 
 }
